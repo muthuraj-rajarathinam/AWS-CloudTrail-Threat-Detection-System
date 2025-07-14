@@ -6,10 +6,10 @@ from datetime import datetime
 
 # DynamoDB & SNS setup
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('SecurityIncidents')
+table = dynamodb.Table('tablename')
 
 sns = boto3.client('sns')
-sns_topic_arn = 'arn:aws:sns:ap-south-1:616461148225:SecurityAlerts'
+sns_topic_arn = 'yoursnslink'
 
 def lambda_handler(event, context):
     print("🛡️ Lambda triggered — log monitoring started.")
