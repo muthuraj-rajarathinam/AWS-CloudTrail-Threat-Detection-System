@@ -6,7 +6,7 @@ from datetime import datetime
 
 # DynamoDB & SNS setup
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('tablename')
+table = dynamodb.Table('yourtablename')
 
 sns = boto3.client('sns')
 sns_topic_arn = 'yoursnslink'
