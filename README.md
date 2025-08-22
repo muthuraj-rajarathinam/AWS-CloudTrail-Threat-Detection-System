@@ -159,8 +159,44 @@ When a threat is detected:
 
 ---
 
-## 📩 Sample Email Alert
+## 📩 Sample log file
 
+```
+------aws-log
+{
+  "awslogs": {
+    "data": "H4sIAAAAAAAAAGVQwW7jMBC951cMMl..."
+  }
+}
+------- After decode data
+{
+  "messageType": "DATA_MESSAGE",
+  "owner": "123456789012",
+  "logGroup": "/aws/cloudtrail/logs",
+  "logStream": "123456789012_CloudTrail_ap-south-1",
+  "logEvents": [
+        {
+      "id": "e1",
+      "timestamp": 1734829292000,
+      "message": "{\"eventName\":\"ConsoleLogin\",\"userIdentity\":{\"type\":\"IAMUser\",\"userName\":\"Admin\"},\"sourceIPAddress\":\"203.0.113.25\",\"awsRegion\":\"us-east-1\",\"eventTime\":\"2025-08-21T10:34:52Z\"}"
+    },
+    {
+      "id": "e2",
+      "timestamp": 1734829305000,
+      "message": "{\"eventName\":\"DeleteBucket\",\"userIdentity\":{\"type\":\"IAMUser\",\"userName\":\"TestUser\"},\"sourceIPAddress\":\"198.51.100.10\",\"awsRegion\":\"cn-north-1\",\"eventTime\":\"2025-08-21T10:35:05Z\"}"
+    },
+    {
+      "id": "e3",
+      "timestamp": 1734829317000,
+      "message": "{\"eventName\":\"StartInstances\",\"userIdentity\":{\"type\":\"Root\"},\"sourceIPAddress\":\"192.0.2.44\",\"awsRegion\":\"ap-south-1\",\"eventTime\":\"2025-08-21T10:35:17Z\"}"
+    }
+  ]
+}
+
+
+```
+
+## 📩 Sample Email file
 ```
 Subject: 🚨 HIGH Threat Detected
 
@@ -172,6 +208,7 @@ Region: cn-north-1
 Time: 2025-07-14T12:30:00
 Reason: Suspicious region access
 ```
+
 
 ## 👨‍💻 Built By
 
